@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="landscape">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,11 +13,64 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Match_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="background" translatesAutoresizingMaskIntoConstraints="NO" id="TRT-fK-V9z">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                            </imageView>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="Rk4-as-8Gy">
+                                <rect key="frame" x="0.0" y="0.0" width="667" height="375"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="yGg-3n-0fZ">
+                                    <size key="itemSize" width="158" height="224"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CardCell" id="RI9-rN-zfK" customClass="CardCollectionViewCell" customModule="Match_App" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
+                                            <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="card1" translatesAutoresizingMaskIntoConstraints="NO" id="XOb-Pj-9g2">
+                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
+                                                </imageView>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="back" translatesAutoresizingMaskIntoConstraints="NO" id="vsI-te-Ff1">
+                                                    <rect key="frame" x="0.0" y="0.0" width="158" height="224"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <constraints>
+                                            <constraint firstAttribute="bottom" secondItem="XOb-Pj-9g2" secondAttribute="bottom" id="G6f-F9-EvN"/>
+                                            <constraint firstAttribute="bottom" secondItem="vsI-te-Ff1" secondAttribute="bottom" id="KpM-dI-dzt"/>
+                                            <constraint firstItem="vsI-te-Ff1" firstAttribute="leading" secondItem="RI9-rN-zfK" secondAttribute="leading" id="SOX-B6-QLA"/>
+                                            <constraint firstItem="XOb-Pj-9g2" firstAttribute="top" secondItem="RI9-rN-zfK" secondAttribute="top" id="cw6-81-lDY"/>
+                                            <constraint firstItem="vsI-te-Ff1" firstAttribute="top" secondItem="RI9-rN-zfK" secondAttribute="top" id="czC-eK-4DS"/>
+                                            <constraint firstAttribute="trailing" secondItem="XOb-Pj-9g2" secondAttribute="trailing" id="kzM-dP-Zxi"/>
+                                            <constraint firstAttribute="trailing" secondItem="vsI-te-Ff1" secondAttribute="trailing" id="rFG-NM-KGb"/>
+                                            <constraint firstItem="XOb-Pj-9g2" firstAttribute="leading" secondItem="RI9-rN-zfK" secondAttribute="leading" id="wvp-In-A36"/>
+                                        </constraints>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="TRT-fK-V9z" secondAttribute="bottom" id="7nM-UJ-bV5"/>
+                            <constraint firstItem="Rk4-as-8Gy" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="HSE-hU-YwT"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Rk4-as-8Gy" secondAttribute="trailing" id="W2e-3q-wcP"/>
+                            <constraint firstAttribute="trailing" secondItem="TRT-fK-V9z" secondAttribute="trailing" id="XSo-Gr-zjQ"/>
+                            <constraint firstItem="TRT-fK-V9z" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="b4m-iE-ONR"/>
+                            <constraint firstItem="TRT-fK-V9z" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="bDl-Lq-7dI"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Rk4-as-8Gy" secondAttribute="bottom" id="bv2-kC-vmc"/>
+                            <constraint firstItem="Rk4-as-8Gy" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="uFi-vr-TnC"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                 </viewController>
@@ -21,4 +78,9 @@
             </objects>
         </scene>
     </scenes>
+    <resources>
+        <image name="back" width="158" height="224"/>
+        <image name="background" width="736" height="414"/>
+        <image name="card1" width="158" height="224"/>
+    </resources>
 </document>
